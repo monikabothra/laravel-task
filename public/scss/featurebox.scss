@@ -1,0 +1,21 @@
+/* feature boxes module */
+
+.featurebox__wrap {
+	text-align:center;
+	padding:rem-calc(30 0);
+	background:$white;
+}
+
+.featurebox {
+	@media #{$medium-up}{
+		@include grid-column(4);
+	}
+}
+
+.featurebox i {
+	display:inline-block;
+	color:$primary-color;
+	font-size:rem-calc(45);
+	width:100%;
+	margin:rem-calc(30 0);
+}

@@ -1,0 +1,32 @@
+.hero {
+	background-image: url(../images/slide1.jpg);
+	background-size:cover;
+
+	h2,h3 {
+		color:$white;
+	}
+
+	h3 {
+		margin-bottom:rem-calc(15);
+	}
+
+	padding:rem-calc(30 0);
+
+	@media #{$medium-up}{
+		padding:rem-calc(80 0);
+
+		h2 {
+			font-size:rem-calc(44);
+		}
+
+	}
+
+	@media #{$large-up}{
+		padding:rem-calc(250 0 80);
+
+		h2 {
+			font-size:rem-calc(58);
+		}
+
+	}
+}

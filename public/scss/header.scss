@@ -1,0 +1,139 @@
+body {
+	background: lighten($background-color, 3%);
+}
+
+header.top {
+	background: $secondary-color;
+	width: 100%;
+	z-index:999;
+	position: relative
+}
+
+.top-bar {
+	margin:rem-calc(28 0);
+
+	@media #{$medium-up}{
+		margin:rem-calc(38 0);
+	}
+}
+
+.title-area a {
+	line-height:rem-calc(40);
+	font-size:rem-calc(36);
+	margin-right:rem-calc(30);
+	font-family: 'Francois One', sans-serif;
+	color:$white;
+}
+
+.top-bar-section ul li {
+
+}
+
+.top-bar-section ul li>a {
+	overflow: hidden;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	font-weight:$font-weight-normal;
+}
+
+
+/* business header, stock price etc */
+
+.business__header {
+	background: lighten($secondary-color,5%);
+	padding:1rem 0;
+}
+
+.business__header h1,.business__header h2,.business__header h3,.business__header h4, .business__header p {
+	color:lighten($secondary-color,35%);
+
+	font-size:rem-calc(13);
+}
+
+.business__header span {
+	margin:0 10px;
+}
+
+.business__header .up {
+	color:#96F096;
+}
+
+.business__header .down {
+	color:#F09696;
+}
+
+
+
+@media #{$small-only} {
+
+	.top-bar-section .social {
+		display:none;
+	}
+
+	section.top-bar-section {
+		margin-top:rem-calc(10);
+	}
+
+	.top-bar-section ul li {
+		background:none;
+		a {
+			padding-left:0;
+		}
+	}
+
+}
+
+@media #{$medium-up} { 
+	.top-bar-section ul li>a span {
+		position: relative;
+		display: inline-block;
+		transition: transform 0.3s;
+	}
+
+	.top-bar-section ul li>a span::before {
+		position: absolute;
+		top: 100%;
+		content: attr(data-hover);
+		transform: translate3d(0,0,0);
+	}
+
+	.top-bar-section ul li>a:hover span, .top-bar-section ul li>a:focus span {
+		transform: translateY(-100%);
+	}
+
+	.top-bar-section ul li ul li {
+		margin:0;
+	}	
+
+	.top-bar-section .dropdown li:not(.has-form):hover>a:not(.button) {
+		background: darken($primary-color,20%);		
+	}
+
+	.top-bar-section li.has-dropdown:not(.has-form):hover a:not(.button) {
+		background:$primary-color;
+		color:lighten($primary-color, 50%);
+	}
+
+	.top-bar-section .dropdown li:not(.has-form):not(.active)>a:not(.button):hover {
+		background:darken($primary-color,20%);
+		color:lighten($primary-color, 50%);		
+	}
+
+	.top-bar-section .has-dropdown.hover>.dropdown, .top-bar-section .has-dropdown.not-click:hover>.dropdown {
+		margin:0;
+	}
+
+	.title.back {
+		display:none;
+	}
+
+	.highlow h3 {
+		text-align:right;
+	}
+
+	.business__header h1,.business__header h2,.business__header h3,.business__header h4, .business__header p {
+		font-size:rem-calc(15);
+	}
+
+
+}
